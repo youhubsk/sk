@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouHub - Domov</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
+body { background-color: #0b111e; color: #ffffff; display: flex; flex-direction: column; height: 100vh;
+overflow: hidden; }
+/* Top Header */
+
+header { height: 60px; background-color: #0f172a; display: flex; align-items: center; justify-content: space-
+between; padding: 0 16px; border-bottom: 1px solid #1e293b; }
+
+.logo-container { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 20px; color:
+#38bdf8; text-decoration: none; }
+.logo-badge { background: #2563eb; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: 18px; }
+.search-bar { display: flex; align-items: center; width: 40%; max-width: 600px; }
+.search-bar input { width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 8px
+14px; border-radius: 20px 0 0 20px; outline: none; }
+.search-bar button { background: #2563eb; border: none; color: white; padding: 8px 16px; border-radius: 0 20px
+20px 0; cursor: pointer; }
+.user-actions { display: flex; align-items: center; gap: 16px; }
+.btn-action { background: #1e293b; border: none; color: #e2e8f0; padding: 8px 12px; border-radius: 20px;
+cursor: pointer; font-size: 13px; }
+.user-avatar { width: 36px; height: 36px; border-radius: 50%; background: #2563eb; display: flex; align-items:
+center; justify-content: center; font-weight: bold; }
+/* Layout Main */
+.main-container { display: flex; flex: 1; overflow: hidden; }
+/* Sidebar */
+aside { width: 220px; background-color: #0f172a; padding: 12px; border-right: 1px solid #1e293b; display: flex;
+flex-direction: column; gap: 4px; }
+.nav-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; color: #94a3b8; text-decoration:
+none; border-radius: 8px; font-size: 14px; }
+.nav-item.active, .nav-item:hover { background-color: #1e293b; color: #38bdf8; font-weight: 600; }
+.divider { height: 1px; background-color: #1e293b; margin: 8px 0; }
+/* Content Area */
+main { flex: 1; padding: 16px; overflow-y: auto; }
+
+/* Category Tags */
+.tags-bar { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+.tag { background: #1e293b; color: #e2e8f0; padding: 6px 14px; border-radius: 16px; font-size: 13px; cursor:
+pointer; white-space: nowrap; }
+.tag.active { background: #2563eb; color: #fff; }
+/* Video Grid */
+
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-
+bottom: 24px; }
+
+.video-card { background: #111827; border-radius: 10px; overflow: hidden; border: 1px solid #1e293b; }
+.thumbnail { width: 100%; height: 150px; background: #1e293b; position: relative; }
+.time-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: #fff; font-size:
+11px; padding: 2px 6px; border-radius: 4px; }
+.video-info { padding: 12px; display: flex; gap: 10px; }
+.channel-pic { width: 36px; height: 36px; border-radius: 50%; background: #334155; flex-shrink: 0; }
+.video-details h3 { font-size: 14px; color: #f8fafc; margin-bottom: 4px; line-height: 1.3; }
+.video-details p { font-size: 12px; color: #94a3b8; }
+/* Channels Row */
+.channels-section h2 { font-size: 16px; color: #38bdf8; margin-bottom: 12px; }
+.channels-list { display: flex; gap: 16px; overflow-x: auto; }
+.channel-item { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px; }
+.channel-avatar-lg { width: 56px; height: 56px; border-radius: 50%; background: #2563eb; border: 2px solid
+#38bdf8; }
+.channel-name { font-size: 11px; color: #cbd5e1; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+<a href="#" class="logo-container"><span class="logo-badge">You</span>Hub</a>
+<div class="search-bar">
+<input type="text" placeholder="Vyhľadať na YouHub...">
+<button>Hľadať</button>
+</div>
+<div class="user-actions">
+<button class="btn-action">+ Pridať video</button>
+<div class="user-avatar">MK</div>
+</div>
+</header>
+<div class="main-container">
+<aside>
+<a href="#" class="nav-item active">Domov</a>
+<a href="#" class="nav-item">Odoberané</a>
+<a href="#" class="nav-item">YouHub Red</a>
+<div class="divider"></div>
+<a href="#" class="nav-item">Knižnica</a>
+<a href="#" class="nav-item">Moje Videá</a>
+<a href="#" class="nav-item">Sledovať neskôr</a>
+<a href="#" class="nav-item">Obľúbené</a>
+</aside>
+<main>
+<div class="tags-bar">
+<div class="tag active">Pre vás</div>
+<div class="tag">Práve trenduje</div>
+<div class="tag">Odoberané</div>
+<div class="tag">Live prenosy</div>
+<div class="tag">YouHub Originals</div>
+<div class="tag">Podcasty</div>
+</div>
+<div class="video-grid">
+<!-- Video Card 1 -->
+<div class="video-card">
+<div class="thumbnail"><span class="time-badge">15:20</span></div>
+<div class="video-info">
+<div class="channel-pic"></div>
+<div class="video-details">
+<h3>Expedícia do Tatier: Skryté doliny</h3>
+<p>Turistický Svet</p>
+<p>145k videní • pred 2 dňami</p>
+</div>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="video-card">
+<div class="thumbnail"><span class="time-badge">11:45</span></div>
+
+<div class="video-info">
+<div class="channel-pic"></div>
+<div class="video-details">
+<h3>10 Tech Vychytávok na rok 2026</h3>
+<p>TechReview CZ/SK</p>
+<p>198k videní • pred 1 dňom</p>
+</div>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="video-card">
+<div class="thumbnail"><span class="time-badge">09:10</span></div>
+<div class="video-info">
+<div class="channel-pic"></div>
+<div class="video-details">
+<h3>Ako sa stať lepším dizajnérom</h3>
+<p>Creative Mind</p>
+<p>112k videní • pred 4 dňami</p>
+</div>
+</div>
+</div>
+</div>
+<div class="channels-section">
+<h2>Najpopulárnejšie Kanály</h2>
+<div class="channels-list">
+<div class="channel-item"><div class="channel-avatar-lg"></div><span class="channel-name">Turistický
+Svet</span></div>
+<div class="channel-item"><div class="channel-avatar-lg"></div><span class="channel-name">TechReview</
+span></div>
+<div class="channel-item"><div class="channel-avatar-lg"></div><span class="channel-name">YouHub Red</
+span></div>
+<div class="channel-item"><div class="channel-avatar-lg"></div><span class="channel-name">Podcasty SK</
+span></div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
